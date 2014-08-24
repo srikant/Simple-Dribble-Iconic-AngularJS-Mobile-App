@@ -1,0 +1,23 @@
+<ion-view hide-back-button="true" title="Awesome">
+  <ion-content padding="true">
+	    <h1>Dribble Viewer</h1>
+	    <!-- <button class="button" ng-click="toIntro()">Do Tutorial Again</button> -->
+	    <div class="list card" data-ng-repeat="image in imageList">
+
+		  <div class="item item-avatar">
+			    <img ng-src="{{image.player.avatar_url}}">
+			    <h2>{{image.player.username}}</h2>
+			    <p>{{image.player.location}}</p>
+		  </div>
+
+		  <div class="item item-image">
+		    	<img data-ng-src="{{isActive===true&&image.image_url||image.image_teaser_url}}" ng-click="isActive=!isActive">
+		  </div>
+
+		  <a class="item item-icon-left bar bar-royal" target="_blank" data-ng-href="{{image.url}}">
+			    <i class="icon ion-music-note energized"></i>
+			    Visit Original Image
+		  </a>
+		</div>
+  </ion-content>
+</ion-view>
